@@ -38,7 +38,6 @@ window.addEventListener('load', () => {
 			description: description,
 			startDate: startDate,
 			done: false,
-			createdAt: new Date().getTime(),
 		}
 
 		todos.push(todo)
