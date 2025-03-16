@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list</title>
+    <!-- Подключаем основной файл стилей (контент из второго кода) -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Подключаем иконки Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <!-- App Wrapper -->
+    <main class="app">
+      
+      <!-- Заголовок с датой -->
+      <section class="header-group">
+        <h2 class="main-header"></h2>
+        <p class="header-group__sub-header"></p>
+      </section>
+      
+      <!-- Поле поиска -->
+      <section class="search">
+        <div class="search-field">
+          <input type="text" class="search-field__input" placeholder="Поиск" />
+          <span class="search-field__icon material-symbols-rounded">search</span>
+        </div>
+      </section>
+      
+      <!-- Форма создания новой записи -->
+      <form class="create-form" id="create-form">
+        <h2 class="main-header">Новая запись</h2>
+        <input
+          type="text"
+          class="create-form__input"
+          placeholder="Описание"
+          name="description"
+          id="description"
+          required
+        />
+        <input
+          type="datetime-local"
+          class="create-form__input"
+          placeholder="Дата"
+          name="startDate"
+          id="startDate"
+        />
+        <div class="form__buttons-wrapper">
+          <button class="form-button form-button--primary" type="submit">
+            Добавить
+          </button>
+          <button class="form-button form-button--secondary" type="reset">
+            Очистить
+          </button>
+        </div>
+      </form>
+      
+      <!-- Секция списка задач -->
+      <section class="todo-list">
+        <h2 class="main-header">Список дел</h2>
+        <!-- Фильтры задач -->
+        <div class="split-button">
+          <button class="split-button__button split-button__button--active" id="filter-all">
+            <span class="material-symbols-rounded split-button__button-icon">check</span>
+            Все
+          </button>
+          <button class="split-button__button split-button__button--center" id="filter-active">
+            <span class="material-symbols-rounded split-button__button-icon">check</span>
+            Активные
+          </button>
+          <button class="split-button__button" id="filter-done">
+            <span class="material-symbols-rounded split-button__button-icon">check</span>
+            Готовые
+          </button>
+        </div>
+        <!-- Список задач -->
+        <ul class="todo-list" id="todo-list"></ul>
+        <!-- Плавающая кнопка для редактирования/добавления задач -->
+        <button class="float-button">
+          <span class="material-symbols-rounded">edit</span>
+        </button>
+      </section>
+      
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
